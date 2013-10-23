@@ -37,12 +37,13 @@ function showloc() {
 # Set a random colour if logged in via ssh
 function setloccolour() {
     text="%{$reset_color%}"
-    if [ ! -f "$HOME/.zxiiro-theme/sshcolor-$HOSTNAME" ]
+    hostname=`hostname`
+    if [ ! -f "$HOME/.zxiiro-theme/sshcolor-$hostname" ]
     then
         mkdir $HOME/.zxiiro-theme
-        echo `shuf -i 133-163 -n 1` > "$HOME/.zxiiro-theme/sshcolor-$HOSTNAME"
+        echo `shuf -i 133-163 -n 1` > "$HOME/.zxiiro-theme/sshcolor-$hostname"
     fi
-    SSHCOLOR=`cat "$HOME/.zxiiro-theme/sshcolor-$HOSTNAME"`
+    SSHCOLOR=`cat "$HOME/.zxiiro-theme/sshcolor-$hostname"`
 
     if [ -n "$SSH_CLIENT" ]
     then
