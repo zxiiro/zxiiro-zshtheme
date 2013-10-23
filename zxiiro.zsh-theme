@@ -34,8 +34,25 @@ function showloc() {
     echo $hostname
 }
 
+# Set a random colour if logged in via ssh
+function setloccolour() {
+    text="%{$reset_color%}"
+    if [ ! -f "$HOME/.zxiiro-theme/sshcolor-$HOSTNAME" ]
+    then
+        mkdir $HOME/.zxiiro-theme
+        echo `shuf -i 133-163 -n 1` > "$HOME/.zxiiro-theme/sshcolor-$HOSTNAME"
+    fi
+    SSHCOLOR=`cat "$HOME/.zxiiro-theme/sshcolor-$HOSTNAME"`
+
+    if [ -n "$SSH_CLIENT" ]
+    then
+        text="%{$FG[$SSHCOLOR]%}"
+    fi
+    echo $text
+}
+
 PROMPT=$'
-%{$fg[red]%}/--{%{$reset_color%}[%!]%(!.%UROOT%u.%n)@%m:%l%{$fg[red]%}}----{%{$reset_color%}%~%{$fg[red]%}}--
+%{$fg[red]%}/--{%{$reset_color%}[%!]%(!.%UROOT%u.%n)@%{$(setloccolour)%}%m%{$reset_color%}:%l%{$fg[red]%}}----{%{$reset_color%}%~%{$fg[red]%}}--
 | %{$reset_color%}%T$(showgit)%{$fg[red]%} %#%{$reset_color%} '
 PS2=$'%{$fg[red]%}| %{$fg[blue]%}%B>%b%{$reset_color%} '
 RPS1='%D{%Y-%m-%d}'
