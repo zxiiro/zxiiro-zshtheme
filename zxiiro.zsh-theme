@@ -25,7 +25,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[grey]%}✈"
 function showgit() {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
     gitinfo="$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$( git_prompt_status )%{$fg[white]%B%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
-    text=" %B<$gitinfo>%b"
+    text=" %{%B%}<$gitinfo>%{%b%}"
     echo $text
 }
 
@@ -56,6 +56,6 @@ function setloccolour() {
 PROMPT=$'
 %{$fg[red]%}/--{%{$reset_color%}[%!]%(!.%UROOT%u.%n)@%{$(setloccolour)%}%m%{$reset_color%}:%l%{$fg[red]%}}----{%{$reset_color%}%~%{$fg[red]%}}--
 | %{$reset_color%}%T$(showgit)%{$fg[red]%} %#%{$reset_color%} '
-PS2=$'%{$fg[red]%}| %{$fg[blue]%}%B>%b%{$reset_color%} '
+PS2=$'%{$fg[red]%}| %{$fg[blue]%B%}>%{%b$reset_color%} '
 RPS1='%D{%Y-%m-%d}'
 
