@@ -3,6 +3,12 @@ zxiiro-zshtheme
 
 My personal zsh theme
 
+
+This theme is meant to be used with oh-my-zsh. Simply copy the file
+zxiiro.zsh-theme to your oh-my-zsh themes directory. (Usually
+~/.oh-my-zsh/themes)
+
+
 Regular prompt:
 
 ![No Git](snapshot.png)
