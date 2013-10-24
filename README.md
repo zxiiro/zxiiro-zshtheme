@@ -9,6 +9,11 @@ zxiiro.zsh-theme to your oh-my-zsh themes directory. (Usually
 ~/.oh-my-zsh/themes)
 
 
+Features of this theme:
+* Hostname colours when ssh'd
+* Git status when inside a git repo
+
+
 Regular prompt:
 
 ![No Git](img/snapshot.png)
