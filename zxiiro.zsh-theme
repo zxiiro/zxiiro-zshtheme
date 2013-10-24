@@ -22,6 +22,7 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}➦"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%}✂"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[grey]%}✈"
 
+# Shows the git status when inside a valid git repo
 function showgit() {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
     gitinfo="$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$( git_prompt_status )%{$fg[white]%B%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
@@ -53,6 +54,10 @@ function setloccolour() {
     echo $text
 }
 
+# Prompt line1: /--{[$job] $username @ $hostname : $terminal}----{$directory}--
+# Prompt line2: | $time %|#
+# Right Side Prompt: $date (YYYY-MM-DD)
+# Note: spaces are there for clarity they aren't in the actual code
 PROMPT=$'
 %{$fg[red]%}/--{%{$reset_color%}[%!]%(!.%UROOT%u.%n)@%{$(setloccolour)%}%m%{$reset_color%}:%l%{$fg[red]%}}----{%{$reset_color%}%~%{$fg[red]%}}--
 | %{$reset_color%}%T$(showgit)%{$fg[red]%} %#%{$reset_color%} '
