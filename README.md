@@ -11,29 +11,37 @@ zxiiro.zsh-theme to your oh-my-zsh themes directory. (Usually
 
 Regular prompt:
 
-![No Git](snapshot.png)
+![No Git](img/snapshot.png)
+
+Prompt when SSH'd:
+
+![SSH](img/snapshot-ssh.png)
+
+Prompt when Multiline:
+
+![SSH](img/snapshot-multiline.png)
 
 Git Prompt:
 
-![Git](snapshot-git.png)
+![Git](img/snapshot-git.png)
 
 Git Prompt with changes:
 
-![Git Changes](snapshot-git-changes.png)
+![Git Changes](img/snapshot-git-changed.png)
 
 Git Prompt with deleted files:
 
-![Git Deleted](snapshot-git-deleted.png)
+![Git Deleted](img/snapshot-git-deleted.png)
 
 Git Prompt with renamed files:
 
-![Git Renamed](snapshot-git-renamed.png)
+![Git Renamed](img/snapshot-git-renamed.png)
 
 Git Prompt with staged files:
 
-![Git Staged](snapshot-git-staged.png)
+![Git Staged](img/snapshot-git-staged.png)
 
 Git Prompt with untracked files:
 
-![Git Untracked](snapshot-git-untracked.png)
+![Git Untracked](img/snapshot-git-untracked.png)
 
