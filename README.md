@@ -13,6 +13,12 @@ Features of this theme:
 * Hostname colours when ssh'd
 * Git status when inside a git repo
 
+## Install
+
+```bash
+$ cd ~/.oh-my-zsh/themes/
+$ wget https://raw.githubusercontent.com/zxiiro/zxiiro-zshtheme/master/zxiiro.zsh-theme
+```
 
 Regular prompt:
 
